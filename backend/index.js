@@ -16,10 +16,6 @@ process.chdir('../');
 
 app.use(express.static(process.cwd()+"/taskZero/dist/taskZero/"));
 
-app.get('/', (req,res) => {
-    res.sendFile(process.cwd()+"/taskZero/dist/taskZero/index.html");
-});
-
 app.get("/api/students", async (req,res) => {
     const conn = await connection().catch(e => {}) 
     const results = await query(conn, 'SELECT * FROM students').catch(console.log);
@@ -39,6 +35,11 @@ app.post("/api/student", async (req,res) =>{
 app.use(function (req, res, next) {
     res.status(404).send("<h3>Sorry can't find that!</h3>")
   });
+
+
+app.get('/', (req,res) => {
+    res.sendFile(process.cwd()+"/taskZero/dist/taskZero/index.html");
+});
 
 app.listen(port, (req,res)=>{
     console.log("Running at port 3000");
