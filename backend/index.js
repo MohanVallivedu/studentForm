@@ -11,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.json())
 const port = 3000 || process.env.PORT
 
-process.chdir('../');
+//process.chdir('../');
 
 app.use(express.static(process.cwd()+"/taskZero/dist/taskZero/"));
 
