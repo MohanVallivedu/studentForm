@@ -9,5 +9,5 @@ FROM node:12 as BUILD
 WORKDIR /app
 COPY . .
 FROM nginx:alpine
-COPY --FROM=BUILD /app/taskZero/dist/taskZero /usr/share/nginx/html
+COPY --from=BUILD /app/taskZero/dist/taskZero /usr/share/nginx/html
 EXPOSE 80
