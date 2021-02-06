@@ -11,7 +11,7 @@
 FROM node:12 as node
 WORKDIR /app
 COPY package.json .
-RUN npm i npm@latest -g
+#RUN npm i npm@latest -g
 RUN npm install
 RUN npm install -g @angular/cli
 COPY . .
