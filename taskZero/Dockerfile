@@ -14,7 +14,7 @@ COPY package.json .
 RUN npm i npm@latest -g
 RUN npm install
 COPY . .
-RUN npm run BUILD
+RUN npm run build
 
 #Stage 2
 FROM nginx:1.13.12-alpine
