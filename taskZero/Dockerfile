@@ -10,15 +10,16 @@
 
 FROM node:12 as node
 WORKDIR /usr/src/app
-COPY package*.json ./
+COPY package.json .
 RUN npm i npm@latest -g
 RUN npm install
 COPY . .
-RUN npm run build
+RUN npm run BUILD
 
-# Stage 2
+#Stage 2
 FROM nginx:1.13.12-alpine
+#COPY --from=node /usr/src/app/dist/taskZero /usr/share/nginx/html
+VOLUME /usr/src/app/dist/taskZero:/usr/share/nginx/html
+EXPOSE 80
 
-COPY --from=node /usr/src/app/dist/taskZero /usr/share/nginx/html
-
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+#COPY ./nginx.conf /etc/nginx/conf.d/default.conf
