@@ -2,17 +2,12 @@ version: '3.0'
 services:
  angular: # name of the first service
   build: taskZero # specify the directory of the Dockerfile
-  links:
-  - express
   ports:
-  - "8080:80" # specify port mapping
-
+  - "4000:80" # specify port mapping
  express: # name of the second service
   build: backend # specify the directory of the Dockerfile
   ports:
   - "3000:3000" #specify ports mapping
-  depends_on:
-  - database
   links:
   - database # link this service to the database service
 
