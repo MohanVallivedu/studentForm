@@ -4,7 +4,8 @@ services:
   build: taskZero # specify the directory of the Dockerfile
   ports:
   - "4000:80" # specify port mapping
-  
+  volumes: # Volume binding
+  - './taskZero:/usr/src/app'
  express: # name of the second service
   build: backend # specify the directory of the Dockerfile
   ports:
