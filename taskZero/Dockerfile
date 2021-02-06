@@ -5,6 +5,7 @@
 # RUN npm run build --prod
 
 #stage 2
+FROM node:12
 WORKDIR /app
 COPY . .
 FROM nginx:alpine
