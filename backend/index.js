@@ -11,7 +11,6 @@ app.use(cors());
 app.use(bodyParser.json())
 const port = 3000 || process.env.PORT
 
-//var path = process.cwd();
 process.chdir('../');
 
 app.use(express.static(process.cwd()+"/taskZero/dist/taskZero/"));
@@ -32,12 +31,12 @@ app.post("/api/student", async (req,res) =>{
     res.status(200).json({ message: 'ok got it' });
 })
 
-app.use(function (req, res, next) {
-    res.status(404).send("<h3>Sorry can't find that!</h3>")
-  });
+// app.use(function (req, res, next) {
+//     res.status(404).send("<h3>Sorry can't find that!</h3>")
+//   });
 
 
-app.get('/', (req,res) => {
+app.get('*', (req,res) => {
     res.sendFile(process.cwd()+"/taskZero/dist/taskZero/index.html");
 });
 

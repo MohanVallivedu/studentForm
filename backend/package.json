@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "angular":"cd .. && cd taskZero && ng serve",
-    "generate":"cd .. && cd taskZero && npm run build",
+    "angular": "cd .. && cd taskZero && ng serve",
+    "gen": "cd .. && cd taskZero && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
