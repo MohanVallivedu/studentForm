@@ -13,7 +13,7 @@ WORKDIR /app
 COPY package.json .
 #RUN npm i npm@latest -g
 RUN npm install
-RUN npm install -g @angular/cli
+#RUN npm install -g @angular/cli
 COPY . .
 RUN npm run build
 

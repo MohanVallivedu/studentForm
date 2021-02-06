@@ -8,6 +8,7 @@ services:
     - express
   volumes: # Volume binding
     - './dist/taskZero:/usr/share/nginx/html'
+    
  express: # name of the second service
   build: backend # specify the directory of the Dockerfile
   ports:
