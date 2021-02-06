@@ -9,5 +9,5 @@ FROM node:12
 WORKDIR /app
 COPY . .
 FROM nginx:alpine
-COPY /app/dist/taskZero /usr/share/nginx/html
+COPY /app/taskZero/dist/taskZero /usr/share/nginx/html
 EXPOSE 80
