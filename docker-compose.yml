@@ -3,11 +3,11 @@ services:
  angular: # name of the first service
   build: taskZero # specify the directory of the Dockerfile
   ports:
-    - "4000:80" # specify port mapping
+    - "4200:4200" # specify port mapping
   links:
     - express
   volumes: # Volume binding
-    - './taskZero/dist/taskZero:/usr/share/nginx/html'
+    - './dist/taskZero:/usr/share/nginx/html'
  express: # name of the second service
   build: backend # specify the directory of the Dockerfile
   ports:
