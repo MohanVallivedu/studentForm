@@ -1,7 +1,17 @@
+# FROM node:12
+# WORKDIR /app
+# COPY . .
+# RUN npm install
+# RUN npm install -g nodemon
+# EXPOSE 3000
+# CMD ["nodemon","index.js"]
+
+
 FROM node:12
-WORKDIR /app
-COPY . .
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+COPY package.json /usr/src/app
 RUN npm install
-RUN npm install -g nodemon
+COPY . /usr/src/app
 EXPOSE 3000
-CMD ["nodemon","index.js"]
+CMD ["nodemon", "index.js"]
